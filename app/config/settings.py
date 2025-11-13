@@ -21,8 +21,13 @@ class ModelConfig:
 class HeatmapConfig:
     SAVE_DIR: str = os.getenv("HEATMAP_SAVE_DIR", "saved_heatmaps")
     SAVE_INTERVAL: int = 1800  # 30 минут
-    GAUSSIAN_RADIUS: int = 20
+    GAUSSIAN_RADIUS: int = 30
     OVERLAY_ALPHA: float = 0.3
+    
+    # НОВЫЕ ПАРАМЕТРЫ:
+    INTENSITY_PER_DETECTION: float = 1.0      # Интенсивность добавления
+    HEATMAP_SCALING: str = "absolute"         # "relative" или "absolute"
+    ABSOLUTE_SCALE_MAX: float = 5000.0        # Максимум для absolute режима
 
 @dataclass
 class AppConfig:
