@@ -56,3 +56,8 @@ logs/
 # Environment variables
 .env
 .env.local
+data/saved_heatmaps/*.npz
+data/saved_heatmaps/*.png
+data/saved_heatmaps/*.jpg
+data/saved_heatmaps/*.json
+saved_heatmaps/  
