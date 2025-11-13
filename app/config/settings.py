@@ -20,8 +20,8 @@ class ModelConfig:
 @dataclass
 class HeatmapConfig:
     SAVE_DIR: str = os.getenv("HEATMAP_SAVE_DIR", "saved_heatmaps")
-    SAVE_INTERVAL: int = 300  # 5 минут
-    GAUSSIAN_RADIUS: int = 30
+    SAVE_INTERVAL: int = 1800  # 30 минут
+    GAUSSIAN_RADIUS: int = 20
     OVERLAY_ALPHA: float = 0.3
 
 @dataclass

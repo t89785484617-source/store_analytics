@@ -1,3 +1,10 @@
+============================================================
+🚀 ПОЛНЫЙ ОТЧЕТ О ПРОЕКТЕ ДЛЯ ИИ
+============================================================
+
+📋 ОПИСАНИЕ ПРОЕКТА
+----------------------------------------
+=== README.md ===
 Store Analytics Project Documentation
 🎯 Project Overview
 Store Analytics with Heatmap Detection - это система компьютерного зрения для анализа посещаемости магазина в реальном времени. Приложение отслеживает движение людей, строит тепловые карты активности и предоставляет веб-интерфейс для мониторинга.
@@ -227,29 +234,111 @@ Advanced analytics
 Mobile app interface
 
 📈 Scaling Considerations
-Current Limitations
-Single camera stream
+Current 
 
-In-memory heatmap storage
+... (файл усечен, полная версия в репозитории)
 
-Basic statistical analysis
 
-Potential Enhancements
-Multi-camera support
+⚙️ КОНФИГУРАЦИОННЫЕ ФАЙЛЫ
+----------------------------------------
+--- 🐍 Python зависимости (requirements.txt) ---
+blinker==1.9.0
+certifi==2025.11.12
+charset-normalizer==3.4.4
+click==8.3.0
+contourpy==1.3.2
+cycler==0.12.1
+filelock==3.20.0
+Flask==2.3.3
+fonttools==4.60.1
+fsspec==2025.10.0
+idna==3.11
+itsdangerous==2.2.0
+Jinja2==3.1.6
+kiwisolver==1.4.9
+MarkupSafe==3.0.3
+matplotlib==3.10.7
+mpmath==1.3.0
+networkx==3.4.2
+numpy==1.24.3
+nvidia-cublas-cu12==12.8.4.1
+nvidia-cuda-cupti-cu12==12.8.90
+nvidia-cuda-nvrtc-cu12==12.8.93
+nvidia-cuda-runtime-cu12==12.8.90
+nvidia-cudnn-cu12==9.10.2.21
+nvidia-cufft-cu12==11.3.3.83
+nvidia-cufile-cu12==1.13.1.3
+nvidia-curand-cu12==10.3.9.90
+nvidia-cusolver-cu12==11.7.3.90
+nvidia-cusparse-cu12==12.5.8.93
+nvidia-cusparselt-cu12==0.7.1
+nvidia-nccl-cu12==2.27.5
+nvidia-nvjitlink-cu12==12.8.93
+nvidia-nvshmem-cu12==3.3.20
+nvidia-nvtx-cu12==12.8.90
+opencv-python==4.8.1.78
+packaging==25.0
+pandas==2.3.3
+pillow==12.0.0
+psutil==7.1.3
+py-cpuinfo==9.0.0
+pyparsing==3.2.5
+python-dateutil==2.9.0.post0
+python-dotenv==1.0.0
+pytz==2025.2
+PyYAML==6.0.3
+requests==2.32.5
+scipy==1.15.3
+seaborn==0.13.2
+six==1.17.0
+sympy==1.14.0
+torch==2.9.1
+torchvision==0.24.1
+tqdm==4.67.1
+triton==3.5.1
+typing_extensions==4.15.0
+tzdata==2025.2
+ultralytics==8.0.186
+urllib3==2.5.0
+Werkzeug==3.1.3
 
-Database backend
+--- 🐳 Docker конфигурация (Dockerfile) ---
+FROM python:3.9-slim
 
-Real-time alerts
+WORKDIR /app
 
-Historical analysis
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
 
-Export capabilities
+COPY . .
 
-🔒 Security Notes
-RTSP credentials in configuration
+RUN mkdir -p data/saved_heatmaps logs
 
-No authentication on web interface
+EXPOSE 8001
 
-Local network deployment recommended
+CMD ["python", "-m", "app.main"]
 
-Consider adding auth for production
+
+🌳 СТРУКТУРА ПРОЕКТА
+----------------------------------------
+📁 /
+📍 Путь: /home/andvar/store_analytics
+
+├── 📁 app/
+│   ├── 📁 api/
+│   ├── 📁 config/
+│   ├── 📁 core/
+│   ├── 📁 services/
+│   ├── 📁 static/
+│   │   ├── 📁 css/
+│   │   └── 📁 js/
+│   └── 📁 utils/
+├── 📁 data/
+│   ├── 📁 models/
+│   └── 📁 saved_heatmaps/
+├── 📁 logs/
+├── 📁 saved_heatmaps/
+│   └── 📁 20251113/
+├── 📁 tests/
+├── 📄 Dockerfile
+└── 📄 LICENSE

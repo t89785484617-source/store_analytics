@@ -25,7 +25,6 @@ MANIFEST
 venv/
 env/
 ENV/
-
 # IDE
 .vscode/
 .idea/
@@ -61,3 +60,4 @@ data/saved_heatmaps/*.png
 data/saved_heatmaps/*.jpg
 data/saved_heatmaps/*.json
 saved_heatmaps/  
+project_explorer.py
